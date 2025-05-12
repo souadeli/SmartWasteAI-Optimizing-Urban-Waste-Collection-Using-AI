@@ -1,7 +1,5 @@
-# SmartWasteAI-Optimizing-Urban-Waste-Collection-Using-AI
-SmartWasteAI is an AI-powered solution to optimize urban waste collection routes based on real-time bin data, weather, and traffic patterns. Final project for the Building AI course.
-<!-- This is the markdown template for the final project of the Building AI course, 
-created by Reaktor Innovations and University of Helsinki. 
+<!-- This is the markdown template for the final project of the Building AI course,
+created by Reaktor Innovations and University of Helsinki.
 Copy the template, paste it to your GitHub README and edit! -->
 
 # SmartWasteAI
@@ -10,67 +8,70 @@ Final project for the Building AI course
 
 ## Summary
 
-SmartWasteAI is an AI-powered system that optimizes urban waste collection routes using real-time bin data, traffic conditions, and weather forecasts. It aims to reduce operational costs and improve sanitation efficiency in cities.
+SmartWasteAI uses machine learning and sensor data to predict optimal garbage collection times and routes, reducing costs, emissions, and overflows in urban waste management systems.
 
 ## Background
 
-Urban waste collection is often inefficient, causing overflowing bins or wasted fuel due to unnecessary pickups. This project addresses:
-* Poor route planning by city sanitation departments
-* Environmental impacts of excess fuel use
-* Overflowing waste bins in high-density areas
+Urban waste overflow and inefficient pickup routes are a major issue in many cities. Bins are either collected too often (wasting fuel and labor) or too late (causing hygiene issues).
 
-**Motivation:** Living in a busy neighborhood, I regularly see bins overflowing while others nearby are half-empty. SmartWasteAI is my way of using AI to tackle this everyday problem.
+This is how you make a list, if you need one:
+* Overflowing public bins
+* Inefficient pickup schedules
+* Carbon emissions from waste trucks
+
+My motivation: I live in a city where trash bins often overflow, causing bad smell and health risks. This idea could help municipalities become smarter and cleaner.
 
 ## How is it used?
 
-Sanitation planners and waste truck drivers use the system to:
-* Monitor bin fill levels via IoT sensors or citizen input
-* Generate optimal pickup routes that adapt to traffic and weather
-* Predict future fill levels and plan accordingly
+Municipalities equip public trash bins with weight or fill-level sensors. The data is collected daily and used to train a machine learning model that predicts:
+- When each bin will be full
+- The best pickup route for trucks
 
-Citizens can optionally report full bins via a mobile app.  
-The system is especially useful in urban areas during high-traffic hours or after public events.
+The dashboard lets planners:
+- View bins nearing capacity
+- Get route suggestions
+- Improve collection schedules
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/e/e6/Garbage_Truck_in_Toronto.jpg" width="300">
+<img src="smartbin-map.png" width="400">
 
 ## Data sources and AI methods
 
-### Data sources:
-* IoT bin sensors (or crowdsourced mobile app data)
-* Google Maps Traffic API
-* OpenWeatherMap API
-* Historical bin collection records from municipalities
+- Sensor data from smart bins (simulated or open city data)
+- Weather and public event schedules (affect fill rates)
+- AI methods: Regression for bin fill predictions, K-means or route optimization, reinforcement learning for scheduling
+- Visualization: Matplotlib/Plotly in Python
 
-### AI methods:
-* **Regression models** – predict when bins will reach capacity
-* **Reinforcement learning / optimization** – calculate efficient collection routes
-* **Anomaly detection** – spot unusual fill patterns or faulty sensors
+Example data source:
+[Open City Sensor Data](https://data.gov)
 
-| Technique           | Use Case                         |
-|--------------------|----------------------------------|
-| Regression          | Bin fill level forecasting       |
-| Reinforcement learning | Route optimization            |
-| Anomaly detection   | Faulty bin or sensor detection   |
+| Feature        | Source             |
+|----------------|--------------------|
+| Fill-level     | IoT sensors        |
+| Location       | GPS/Bin mapping    |
+| Event calendar | Open city datasets |
 
 ## Challenges
 
-* Sensor data may be noisy or unavailable in some areas
-* Integration with legacy municipal systems
-* Scaling to areas with poor mobile/data infrastructure
-* Ethical concern: data privacy of app users and workers must be ensured
+This project does _not_ solve:
+* Areas without sensor infrastructure
+* Multi-bin sorting (plastic, glass, etc.)
+* Unexpected events like illegal dumping
+
+Ethical considerations:
+- Data privacy of location data
+- Ensuring open access to algorithm recommendations
 
 ## What next?
 
-To grow this project:
-* Create a prototype using Python and Flask with simulated bin data
-* Partner with a municipality for a pilot program
-* Integrate with existing GPS truck routing systems
-* Expand to include recycling optimization and citizen reward systems
+To move forward:
+- Partner with a local municipality
+- Add real-time dashboard
+- Deploy prototype for 3–6 months
+- Gather feedback and iterate
 
 ## Acknowledgments
 
-* Inspired by [SmartBin](https://www.smartbin.com/) and Helsinki's waste routing systems
-* Traffic data API: [Google Maps](https://developers.google.com/maps)
-* Weather data API: [OpenWeatherMap](https://openweathermap.org/api)
-* Building AI course by Reaktor and University of Helsinki
-* Garbage truck photo: [Garbage Truck in Toronto / CC BY-SA 4.0](https://commons.wikimedia.org/wiki/File:Garbage_Truck_in_Toronto.jpg)
+* Inspired by the Elements of AI course
+* Idea shaped by waste issues observed in Rabat, Morocco
+* Icons from [Flaticon](https://www.flaticon.com/)
+* Image credits: [Sleeping Cat on Her Back by Umberto Salvagnin](https://commons.wikimedia.org/wiki/File:Sleeping_cat_on_her_back.jpg#filelinks) / [CC BY 2.0](https://creativecommons.org/licenses/by/2.0)
